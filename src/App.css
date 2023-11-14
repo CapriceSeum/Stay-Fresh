@@ -1,5 +1,15 @@
-.display_fountain {
+* {
+
+    margin: 0;
+    padding: 0;
+
+}
+
+.display_fountain_card {
 
     display: flex;
-
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    
 }

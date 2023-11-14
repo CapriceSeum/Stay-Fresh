@@ -4,8 +4,6 @@ export default function Paris20API() {
 
   const [fountainDrinkData, setFountainDrinkData] = useState([]);
   const [fountainDrinkData2, setFountainDrinkData2] = useState([]);
-  const [result, setResult] = useState([]);
-  const [result2, setResult2] = useState([]);
 
   const fetchAPI = "https://parisdata.opendatasoft.com/api/explore/v2.1/catalog/datasets/fontaines-a-boire/records?limit=100&refine=commune%3APARIS%2020EME%20ARRONDISSEMENT"
 
@@ -17,23 +15,15 @@ export default function Paris20API() {
 
   }, []);
 
-
-  const callResultData = () => {
-
-      setResult(fountainDrinkData.results)
-      setResult2(fountainDrinkData2.results)
-
-  }
-
   const getCommuneData = () => {
 
      fetch(fetchAPI)
       .then((res) => res.json())
-      .then((data) => setFountainDrinkData(data))
+      .then((data) => setFountainDrinkData(data.results))
 
       fetch(fetch2API)
       .then((res) => res.json())
-      .then((data) => setFountainDrinkData2(data))
+      .then((data) => setFountainDrinkData2(data.results))
 
 
   }
@@ -41,10 +31,9 @@ export default function Paris20API() {
   return (
     
     <div>
-    <button onClick={callResultData}>Oui</button>
     <div>Paris 20</div>
     
-    {result.map((data) => 
+    {fountainDrinkData.map((data) => 
       <div className='display_fountain'>
             <p>Partie 1</p>
           <p>Commune :{data.commune}</p>
@@ -56,7 +45,7 @@ export default function Paris20API() {
       </div>
   )} 
 
-  {result2.map((data) => 
+  {fountainDrinkData2.map((data) => 
     <div className='display_fountain'>
             <p>Partie 2</p>
 

@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import FountainDrinkAPI from '../FountainDrinkAPI';
 
-export default function NogentSurMarneAPI() {
+export default function SaintMandeAPI() {
 
   const [fountainDrinkData, setFountainDrinkData] = useState([]);
 
-
-  const fetchAPI = "https://parisdata.opendatasoft.com/api/explore/v2.1/catalog/datasets/fontaines-a-boire/records?limit=100&refine=commune%3ANOGENT-SUR-MARNE"
+  const fetchAPI = "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/fontaines-a-boire/records?limit=100&refine=commune%3ASAINT-MANDE"
 
   useEffect(() => {
 
       getCommuneData()  
 
   }, []);
+
+
 
   const getCommuneData = () => {
 
@@ -25,11 +25,10 @@ export default function NogentSurMarneAPI() {
   return (
     
     <div>
-
-    <div>Nogent Sur Marne</div>
+    <div>Saint Mande</div>
     
     {fountainDrinkData.map((data) => 
-      <div className='display_fountain'>
+      <div className='display_fountain_card' id={data.gid}>
           <p>Commune :{data.commune}</p>
           <p>GID : {data.gid}</p>
           <p>Voie :{data.voie}</p>

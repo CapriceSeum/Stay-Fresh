@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import FountainDrinkAPI from '../FountainDrinkAPI';
 
-export default function NogentSurMarneAPI() {
+export default function ThiaisAPI() {
 
   const [fountainDrinkData, setFountainDrinkData] = useState([]);
 
-
-  const fetchAPI = "https://parisdata.opendatasoft.com/api/explore/v2.1/catalog/datasets/fontaines-a-boire/records?limit=100&refine=commune%3ANOGENT-SUR-MARNE"
+  const fetchAPI = "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/fontaines-a-boire/records?limit=100&refine=commune%3ATHIAIS"
 
   useEffect(() => {
 
@@ -25,8 +23,7 @@ export default function NogentSurMarneAPI() {
   return (
     
     <div>
-
-    <div>Nogent Sur Marne</div>
+    <div>Thiais</div>
     
     {fountainDrinkData.map((data) => 
       <div className='display_fountain'>
