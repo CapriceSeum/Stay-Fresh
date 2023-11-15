@@ -1,3 +1,5 @@
+
+
 * {
 
     margin: 0;
@@ -6,15 +8,16 @@
 }
 
 .display_fountain_card {
+    background: linear-gradient(to right, #5f259f, #3c1478);
+    color: white; /* Couleur du texte */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    margin: 10px; /* Marge extérieure pour séparer les cartes */
+}
 
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border: 1px solid black;
-    border-radius: 25px;
-    width: 25vw;
-
-    
+.display_fountain_card p {
+    margin: 5px 0; /* Marge interne pour séparer les éléments paragraphe */
 }
 
 header .container {
@@ -53,5 +56,6 @@ main .display-cards {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap ;
-
+    justify-content: center;
 }
+

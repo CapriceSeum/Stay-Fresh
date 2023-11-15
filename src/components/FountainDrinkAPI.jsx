@@ -37,7 +37,7 @@ export default function FountainDrinkAPI() {
         <div className='fountain-drink-data'>
 
             <SaintOuenAPI />
-            {/* <BagneuxAPI />
+            <BagneuxAPI />
             <BagnoletAPI />
             <IvrySurSeineAPI />
             <NogentSurMarneAPI />
@@ -53,9 +53,9 @@ export default function FountainDrinkAPI() {
             <Paris18API />
             <Paris19API />
             <Paris1API />
-            <Paris20API /> */}
+            <Paris20API />
             <Paris2API />
-            {/* <Paris3API /> 
+            <Paris3API /> 
             <Paris4API />
             <Paris5API />
             <Paris6API /> 
@@ -63,7 +63,7 @@ export default function FountainDrinkAPI() {
             <Paris8API />
             <Paris9API />
             <SaintDenisAPI /> 
-            <ThiaisAPI /> */}
+            <ThiaisAPI />
 
         </div>
     

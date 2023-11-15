@@ -25,8 +25,8 @@ function App() {
           <SearchIcon className='searchbar-icon' sx={{ fontSize: '2rem' }} />
           <input type="text" className='searchbar-input'  placeholder='Veuillez indiquez la ville ou de la rue...' />
         </div>
-
-        <Filter></Filter>
+        
+        <Filter />
 
         <FountainDrinkAPI />
 

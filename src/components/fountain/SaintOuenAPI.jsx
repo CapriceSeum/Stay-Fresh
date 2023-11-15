@@ -28,7 +28,7 @@ export default function SaintOuenAPI() {
     <div className='display-cards'>
 
       {fountainDrinkData.map((data) => 
-        <div className='display_fountain_card' id={data.gid}>
+        <div className='display_fountain_card' id={data.gid} key={data.gid}>
             <p>{data.commune}</p>  
             <p>Voie : {data.voie}</p>
             <p>Lat : {data.geo_point_2d.lat}</p>

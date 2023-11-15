@@ -1,12 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
+import '../css/filter.css'
 
-export default function FIlter() {
+export default function Filter() {
+
+
+  const getCommuneValue = (e) => {
+  
+    console.log(e.target.value)
+
+      if (e.target.value === "Paris") {
+        
+        document.getElementById("paris-filter").style.visibility = "initial";
+
+      } else {
+
+        console.log("Non test")
+        document.getElementById("paris-filter").style.visibility = "hidden";
+
+      }
+
+  }
+
+
+
   return (
     <div className='filter-container'>
-    <div className='commune-filter'>
+
+      <div id='commune-filter'>
+
         <label for='commune-select'>Commune : </label>
-        <select id='commune-select'>
+        <select onChange={getCommuneValue} id='commune-select'>
           
+          <option value="">--Veuillez choisir une commune--</option>
           <option value="Paris">Paris</option>
           <option value="Bagneux">Bagneux</option>
           <option value="Bagnolet">Bagnolet</option>
@@ -21,12 +46,13 @@ export default function FIlter() {
         </select>
       </div>
 
-      <div className='paris-filter'>
-        <label for='paris-select'>Commune de Paris: </label>
+      <div id='paris-filter'>
+
+        <label for='paris-select'>Disponibilité : </label>
 
         <select id='paris-select'>
           
-          <option value="">--Choississez une commune--</option>
+          <option value="">--Choississez un arrondissement--</option>
           <option value="1">Paris 1er arrondissement</option>
           <option value="2">Paris 2eme arrondissement</option>
           <option value="3">Paris 3eme arrondissement</option>
@@ -49,18 +75,21 @@ export default function FIlter() {
           <option value="20">Paris 20eme arrondissement</option>
 
         </select>
+
       </div>
 
-      <div className='available-filter'>
+      <div id='available-filter'>
         <label for='dispo-select'>Disponibilité : </label>
 
         <select id='dispo-select'>
+
           <option value='yes'>Oui</option>
           <option value='no'>Non</option>
 
-
         </select>
+
       </div>
+
   </div>
   )
 }

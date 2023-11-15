@@ -30,34 +30,30 @@ export default function Paris20API() {
 
   return (
     
-    <div>
-    <div>Paris 20</div>
-    
-    {fountainDrinkData.map((data) => 
-      <div className='display_fountain'>
-            <p>Partie 1</p>
-          <p>Commune :{data.commune}</p>
-          <p>GID : {data.gid}</p>
-          <p>Voie :{data.voie}</p>
-          <p>Lat : {data.geo_point_2d.lat}</p>
-          <p>Lat : {data.geo_point_2d.lon}</p>
-          <p>Dispo : {data.dispo}</p>
-      </div>
-  )} 
+    <div className='display-cards'>
 
-  {fountainDrinkData2.map((data) => 
-    <div className='display_fountain'>
-            <p>Partie 2</p>
+      {fountainDrinkData.map((data) => 
+        <div className='display_fountain_card' id={data.gid} key={data.gid}>
+            <p>{data.commune}</p>  
+            <p>Voie : {data.voie}</p>
+            <p>Lat : {data.geo_point_2d.lat}</p>
+            <p>Lat : {data.geo_point_2d.lon}</p>
+            <p>Dispo : {data.dispo}</p>
+        </div>
+      )}
+   
 
-        <p>Commune :{data.commune}</p>
-        <p>GID : {data.gid}</p>
-        <p>Voie :{data.voie}</p>
-        <p>Lat : {data.geo_point_2d.lat}</p>
-        <p>Lat : {data.geo_point_2d.lon}</p>
-        <p>Dispo : {data.dispo}</p>
-    </div>
-)}
-  </div>
+
+      {fountainDrinkData2.map((data) => 
+          <div className='display_fountain_card' id={data.gid} key={data.gid}>
+              <p>{data.commune}</p>  
+              <p>Voie : {data.voie}</p>
+              <p>Lat : {data.geo_point_2d.lat}</p>
+              <p>Lat : {data.geo_point_2d.lon}</p>
+              <p>Dispo : {data.dispo}</p>
+          </div>
+        )}
+        </div>
   
   )
 }
