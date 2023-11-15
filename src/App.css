@@ -11,5 +11,47 @@
     align-items: center;
     flex-direction: column;
     border: 1px solid black;
+    border-radius: 25px;
+    width: 25vw;
+
     
+}
+
+header .container {
+    
+    text-align: center;
+
+}
+
+main {
+
+    margin: 0px 7%;
+
+}
+
+.searchbar-input {
+
+    width: 50%;
+    height: 3vh;
+    border-radius: 25px;
+    padding: 0px 1vw;
+    
+
+}
+
+.searchbar {
+
+    position: relative;
+    display: flex;
+    align-items: center;
+
+
+}
+
+main .display-cards {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap ;
+
 }

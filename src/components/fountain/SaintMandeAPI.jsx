@@ -27,17 +27,16 @@ export default function SaintMandeAPI() {
     <div>
     <div>Saint Mande</div>
     
-    {fountainDrinkData.map((data) => 
-      <div className='display_fountain_card' id={data.gid}>
-          <p>Commune :{data.commune}</p>
-          <p>GID : {data.gid}</p>
-          <p>Voie :{data.voie}</p>
-          <p>Lat : {data.geo_point_2d.lat}</p>
-          <p>Lat : {data.geo_point_2d.lon}</p>
-          <p>Dispo : {data.dispo}</p>
-      </div>
-  )}
-  </div>
+        {fountainDrinkData.map((data) => 
+          <div className='display_fountain_card' id={data.gid}>
+              <p>{data.commune}</p>  
+              <p>Voie : {data.voie}</p>
+              <p>Lat : {data.geo_point_2d.lat}</p>
+              <p>Lat : {data.geo_point_2d.lon}</p>
+              <p>Dispo : {data.dispo}</p>
+          </div>
+      )}
+    </div>
   
   )
 }
