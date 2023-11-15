@@ -30,12 +30,12 @@ select {
     border-radius: 5px;
 }
 
-/* Ajout de styles spécifiques pour les options */
+
 #commune-select,
 #paris-select,
 #dispo-select {
 
-    background-color: #3c1478; /* Couleur de fond pour les selects */
+    background-color: #3c1478; 
     color: white;
 
 }

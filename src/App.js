@@ -1,10 +1,8 @@
 import './App.css';
-import './css/font.css'
 import './css/main.css'
 
 import Navbar from './components/Navbar';
 import Filter from './components/Filter.jsx';
-
 
 function App() {
 

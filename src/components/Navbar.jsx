@@ -13,12 +13,6 @@ export default function Navbar() {
 
         </div>
 
-        <div className='navbar-right'>
-
-          
-
-        </div>
-
     </nav>
   )
 }
