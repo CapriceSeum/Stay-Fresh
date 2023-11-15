@@ -1,95 +1,141 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../css/filter.css'
+
+
 
 export default function Filter() {
 
+  const [fountainDrinkData, setFountainDrinkData] = useState([]);
+  const [isAvailable, setIsAvailable] = useState("OUI");
+  const [commune, setCommune] = useState("");
+  const [parisArrondissement, setParisArrondissement] = useState([]);
 
   const getCommuneValue = (e) => {
-  
+    
+    setCommune(e.target.value);
     console.log(e.target.value)
+    
+    if (e.target.value === "PARIS") {
+      
+      document.getElementById("paris-filter").style.visibility = "initial";
+      
+    } else {
+      setParisArrondissement("")
+      document.getElementById("paris-filter").style.visibility = "hidden";
+      
+    }
+  }
 
-      if (e.target.value === "Paris") {
-        
-        document.getElementById("paris-filter").style.visibility = "initial";
+  const getParisArrondissement = (e) => {
 
-      } else {
-
-        console.log("Non test")
-        document.getElementById("paris-filter").style.visibility = "hidden";
-
-      }
+    setParisArrondissement(e.target.value)
 
   }
 
+  const getAvailableInfo = (e) => {
 
+    setIsAvailable(e.target.value)
 
+  }
+  
+  useEffect(() => {
+    
+    const fetchAPI = `https://parisdata.opendatasoft.com/api/explore/v2.1/catalog/datasets/fontaines-a-boire/records?limit=100&refine=commune%3A${commune}${parisArrondissement}&refine=dispo%3A${isAvailable}`
+    fetch(fetchAPI)
+    .then((res) => res.json())
+    .then((data) => setFountainDrinkData(data.results))
+
+   
+    
+  }, [commune, parisArrondissement, isAvailable])
+  
   return (
-    <div className='filter-container'>
 
+  <div>
+    <div className='filter-container'>
+      
       <div id='commune-filter'>
 
-        <label for='commune-select'>Commune : </label>
+        <label htmlFor='commune-select'>Commune : </label>
         <select onChange={getCommuneValue} id='commune-select'>
           
           <option value="">--Veuillez choisir une commune--</option>
-          <option value="Paris">Paris</option>
-          <option value="Bagneux">Bagneux</option>
-          <option value="Bagnolet">Bagnolet</option>
-          <option value="Ivry-Sur-Seine">Ivry-Sur-Seine</option>
-          <option value="Nogent-Sur-Marne">Nogent-Sur-Marne</option>
-          <option value="Pantin">Pantin</option>
-          <option value="Saint-Denis">Saint-Denis</option>
-          <option value="Saint-Mandé">Saint-Mandé</option>
-          <option value="Saint-Ouen">Saint-Ouen</option>
-          <option value="Thiais">Thiais</option>
+          <option value="PARIS">Paris</option>
+          <option value="BAGNEUX">Bagneux</option>
+          <option value="BAGNOLET">Bagnolet</option>
+          <option value="IVRY-SUR-SEINE">Ivry-Sur-Seine</option>
+          <option value="NOGENT-SUR-MARNE">Nogent-Sur-Marne</option>
+          <option value="PANTIN">Pantin</option>
+          <option value="SAINT-DENIS">Saint-Denis</option>
+          <option value="SAINT-MANDE">Saint-Mandé</option>
+          <option value="SAINT-OUEN">Saint-Ouen</option>
+          <option value="THIAIS">Thiais</option>
   
         </select>
       </div>
 
       <div id='paris-filter'>
 
-        <label for='paris-select'>Disponibilité : </label>
+        <label htmlFor='paris-select'>Arrondissement de Paris : </label>
 
-        <select id='paris-select'>
+        <select onChange={getParisArrondissement} id='paris-select'>
           
-          <option value="">--Choississez un arrondissement--</option>
-          <option value="1">Paris 1er arrondissement</option>
-          <option value="2">Paris 2eme arrondissement</option>
-          <option value="3">Paris 3eme arrondissement</option>
-          <option value="4">Paris 4eme arrondissement</option>
-          <option value="5">Paris 5eme arrondissement</option>
-          <option value="6">Paris 6eme arrondissement</option>
-          <option value="7">Paris 7eme arrondissement</option>
-          <option value="8">Paris 8eme arrondissement</option>
-          <option value="9">Paris 9eme arrondissement</option>
-          <option value="10">Paris 10eme arrondissement</option>
-          <option value="11">Paris 11eme arrondissement</option>
-          <option value="12">Paris 12eme arrondissement</option>
-          <option value="13">Paris 13eme arrondissement</option>
-          <option value="14">Paris 14eme arrondissement</option>
-          <option value="15">Paris 15eme arrondissement</option>
-          <option value="16">Paris 16eme arrondissement</option>
-          <option value="17">Paris 17eme arrondissement</option>
-          <option value="18">Paris 18eme arrondissement</option>
-          <option value="19">Paris 19eme arrondissement</option>
-          <option value="20">Paris 20eme arrondissement</option>
+          <option value="">--Veuillez choisir un arrondissement--</option>
+          <option value="%201ER%20ARRONDISSEMENT">Paris 1er arrondissement</option>
+          <option value="%202EME%20ARRONDISSEMENT">Paris 2eme arrondissement</option>
+          <option value="%203EME%20ARRONDISSEMENT">Paris 3eme arrondissement</option>
+          <option value="%204EME%20ARRONDISSEMENT">Paris 4eme arrondissement</option>
+          <option value="%205EME%20ARRONDISSEMENT">Paris 5eme arrondissement</option>
+          <option value="%206EME%20ARRONDISSEMENT">Paris 6eme arrondissement</option>
+          <option value="%207EME%20ARRONDISSEMENT">Paris 7eme arrondissement</option>
+          <option value="%208EME%20ARRONDISSEMENT">Paris 8eme arrondissement</option>
+          <option value="%209EME%20ARRONDISSEMENT">Paris 9eme arrondissement</option>
+          <option value="%2010EME%20ARRONDISSEMENT">Paris 10eme arrondissement</option>
+          <option value="%2011EME%20ARRONDISSEMENT">Paris 11eme arrondissement</option>
+          <option value="%2012EME%20ARRONDISSEMENT">Paris 12eme arrondissement</option>
+          <option value="%2013EME%20ARRONDISSEMENT">Paris 13eme arrondissement</option>
+          <option value="%2014EME%20ARRONDISSEMENT">Paris 14eme arrondissement</option>
+          <option value="%2015EME%20ARRONDISSEMENT">Paris 15eme arrondissement</option>
+          <option value="%2016EME%20ARRONDISSEMENT">Paris 16eme arrondissement</option>
+          <option value="%2017EME%20ARRONDISSEMENT">Paris 17eme arrondissement</option>
+          <option value="%2018EME%20ARRONDISSEMENT">Paris 18eme arrondissement</option>
+          <option value="%2019ME%20ARRONDISSEMENT">Paris 19eme arrondissement</option>
+          <option value="%2020EME%20ARRONDISSEMENT">Paris 20eme arrondissement</option>
 
         </select>
 
       </div>
 
       <div id='available-filter'>
-        <label for='dispo-select'>Disponibilité : </label>
+        <label htmlFor='dispo-select'>Disponibilité : </label>
 
-        <select id='dispo-select'>
+        <select onChange={getAvailableInfo} id='dispo-select'>
 
-          <option value='yes'>Oui</option>
-          <option value='no'>Non</option>
+          <option value='OUI'>Oui</option>
+          <option value='NON'>Non</option>
 
         </select>
 
-      </div>
+    </div>
 
-  </div>
+      </div>
+        <div className='display-cards'>
+
+        {fountainDrinkData.length === 0 ? (
+          <div>Nous avons trouvé aucun résultat....</div>
+            ) : (
+            fountainDrinkData.map((data) => (
+              <div className='display_fountain_card' id={data.gid} key={data.gid}>
+                <p>{data.commune}</p>  
+                <p>Voie: {data.voie}</p>
+                <p>Dispo: {data.dispo}</p>
+              </div>
+            ))
+          )
+        }
+          </div>
+
+    </div>
+
   )
 }

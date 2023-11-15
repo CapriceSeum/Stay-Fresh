@@ -1,0 +1,28 @@
+main .display-cards {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap ;
+    justify-content: center;
+}
+
+main {
+
+    margin: 0px 7%;
+
+}
+
+
+.display_fountain_card {
+    background: linear-gradient(to right, #5f259f, #3c1478);
+    color: white; 
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    margin: 10px; 
+    width: 20%;
+}
+
+.display_fountain_card p {
+    margin: 5px 0; 
+}

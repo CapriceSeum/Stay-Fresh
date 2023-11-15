@@ -9,17 +9,15 @@ export default function Navbar() {
 
         <div className='navbar-left'>
 
-            <h1>Stay Fresh</h1>
+          <h1>Stay Fresh</h1>
 
         </div>
 
         <div className='navbar-right'>
 
-            <p>Done by Luc Lu</p>
-
+          
 
         </div>
-
 
     </nav>
   )
