@@ -126,6 +126,10 @@ export default function Filter() {
             fountainDrinkData.map((data) => (
               <div className='display_fountain_card' id={data.gid} key={data.gid}>
                 <p>{data.commune}</p>  
+                {/* <p>{data.geo_point_2d.lon}</p>  
+                <p>{data.geo_point_2d.lat}</p>   
+                Permet à l'avenir de calculer la distance entre l'utilisateur et le point d'eau proche
+                */}
                 <p>Voie: {data.voie}</p>
                 <p>Dispo: {data.dispo}</p>
               </div>

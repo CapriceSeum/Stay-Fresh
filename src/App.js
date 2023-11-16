@@ -3,13 +3,14 @@ import './css/main.css'
 
 import Navbar from './components/Navbar';
 import Filter from './components/Filter.jsx';
+import MyLocalisation from './components/MyLocalisation.jsx';
 
 function App() {
 
   return (
 
       <div className="App">
-
+        
         <header>
           <Navbar />
 
@@ -20,7 +21,9 @@ function App() {
         </header>
         <main>
           <Filter />
-        </main>
+          </main>
+
+          {/* <MyLocalisation /> Ajout d'une fonctionnalité " Ma position plus tard " */}
       </div>
 
   );
