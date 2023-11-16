@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import '../css/filter.css'
 
 
-
 export default function Filter() {
 
   const [fountainDrinkData, setFountainDrinkData] = useState([]);
