@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import '../css/filter.css'
+import Results from './Results';
 
 
 export default function Filter() {
 
-  const [fountainDrinkData, setFountainDrinkData] = useState([]);
   const [isAvailable, setIsAvailable] = useState("OUI");
   const [commune, setCommune] = useState("");
   const [parisArrondissement, setParisArrondissement] = useState([]);
@@ -36,17 +36,6 @@ export default function Filter() {
     setIsAvailable(e.target.value)
 
   }
-  
-  useEffect(() => {
-    
-    const fetchAPI = `https://parisdata.opendatasoft.com/api/explore/v2.1/catalog/datasets/fontaines-a-boire/records?limit=100&refine=commune%3A${commune}${parisArrondissement}&refine=dispo%3A${isAvailable}`
-    fetch(fetchAPI)
-    .then((res) => res.json())
-    .then((data) => setFountainDrinkData(data.results))
-
-   
-    
-  }, [commune, parisArrondissement, isAvailable])
   
   return (
 
@@ -105,39 +94,21 @@ export default function Filter() {
 
       </div>
 
-      <div id='available-filter'>
-        <label htmlFor='dispo-select'>Disponibilité : </label>
+        <div id='available-filter'>
+          <label htmlFor='dispo-select'>Disponibilité : </label>
 
-        <select onChange={getAvailableInfo} id='dispo-select'>
+          <select onChange={getAvailableInfo} id='dispo-select'>
 
-          <option value='OUI'>Oui</option>
-          <option value='NON'>Non</option>
+            <option value='OUI'>Oui</option>
+            <option value='NON'>Non</option>
 
-        </select>
+          </select>
 
-    </div>
+        </div>
 
       </div>
-        <div className='display-cards'>
 
-        {fountainDrinkData.length === 0 ? (
-          <div>Nous avons trouvé aucun résultat....</div>
-            ) : (
-            fountainDrinkData.map((data) => (
-              <div className='display_fountain_card' id={data.gid} key={data.gid}>
-                <p>{data.commune}</p>  
-                {/* <p>{data.geo_point_2d.lon}</p>  
-                <p>{data.geo_point_2d.lat}</p>   
-                Permet à l'avenir de calculer la distance entre l'utilisateur et le point d'eau proche
-                */}
-                <p>Voie: {data.voie}</p>
-                <p>Dispo: {data.dispo}</p>
-              </div>
-            ))
-          )
-        }
-        
-          </div>
+      <Results commune={commune} parisArrondissement={parisArrondissement} isAvailable={isAvailable}/>
 
     </div>
   )

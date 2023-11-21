@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import '../css/localisation.css'
+
+export const LocaContext = createContext
 
 export default function MyLocalisation() {
 
@@ -33,11 +35,7 @@ export default function MyLocalisation() {
             console.log("La géolocalisation n'est pas prise en charge par ce navigateur.");
             document.getElementById("geolocalisation-container").style.display = "flex";
 
-
         }
-
-        console.log("Latitude: " + getLatitude);
-        console.log("Longitude: " + getLongitude);
 
     },)
 
@@ -45,16 +43,16 @@ export default function MyLocalisation() {
 
 
   return (
+    
 
+        <div id='geolocalisation-container'>
+            
+            <div className='accept-localisation-box'>
+                <h2>Veuillez accepter votre localisation pour le fonctionnement du site</h2>
 
-    <div id='geolocalisation-container'>
-        
-        <div className='accept-localisation-box'>
-            <h2>Veuillez accepter votre localisation pour le fonctionnement du site</h2>
+            </div>
 
         </div>
-
-    </div>
 
   )
 }

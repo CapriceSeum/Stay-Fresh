@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Filter from './components/Filter.jsx';
 import MyLocalisation from './components/MyLocalisation.jsx';
 
+
 function App() {
 
   return (
@@ -21,9 +22,9 @@ function App() {
         </header>
         <main>
           <Filter />
-          </main>
+        </main>
 
-          {/* <MyLocalisation /> Ajout d'une fonctionnalité " Ma position plus tard " */}
+           <MyLocalisation /> {/*Ajout d'une fonctionnalité " Ma position plus tard " */}
       </div>
 
   );
