@@ -12,7 +12,6 @@ export default function Filter() {
   const getCommuneValue = (e) => {
     
     setCommune(e.target.value);
-    console.log(e.target.value)
     
     if (e.target.value === "PARIS") {
       
@@ -50,7 +49,7 @@ export default function Filter() {
           <option value="">--Veuillez choisir une commune--</option>
           <option value="PARIS">Paris</option>
           <option value="BAGNEUX">Bagneux</option>
-          <option value="BAGNOLET">Bagnolet</option>
+          {/* <option value="BAGNOLET">Bagnolet</option> */}
           <option value="IVRY-SUR-SEINE">Ivry-Sur-Seine</option>
           <option value="NOGENT-SUR-MARNE">Nogent-Sur-Marne</option>
           <option value="PANTIN">Pantin</option>
@@ -87,7 +86,7 @@ export default function Filter() {
           <option value="%2016EME%20ARRONDISSEMENT">Paris 16eme arrondissement</option>
           <option value="%2017EME%20ARRONDISSEMENT">Paris 17eme arrondissement</option>
           <option value="%2018EME%20ARRONDISSEMENT">Paris 18eme arrondissement</option>
-          <option value="%2019ME%20ARRONDISSEMENT">Paris 19eme arrondissement</option>
+          <option value="%2019EME%20ARRONDISSEMENT">Paris 19eme arrondissement</option>
           <option value="%2020EME%20ARRONDISSEMENT">Paris 20eme arrondissement</option>
 
         </select>

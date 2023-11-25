@@ -9,8 +9,9 @@ import MyLocalisation from './components/MyLocalisation.jsx';
 function App() {
 
   return (
-
+    <MyLocalisation>
       <div className="App">
+        
         
         <header>
           <Navbar />
@@ -24,8 +25,10 @@ function App() {
           <Filter />
         </main>
 
-           <MyLocalisation /> {/*Ajout d'une fonctionnalité " Ma position plus tard " */}
       </div>
+
+    </MyLocalisation>
+  
 
   );
 }
