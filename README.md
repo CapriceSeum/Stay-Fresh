@@ -5,7 +5,8 @@ Dans ce projet, je vous propose une solution simple et efficace vous permettant 
 Grâce à l'API de OpenData, j'ai pu récupéré la localisation des différents fontaines d'eaux se trouvant dans la région Parisienne afin de vous les disposer de manière simple et efficace pour la recherche de ce dernier.
 https://opendata.paris.fr/explore/dataset/fontaines-a-boire/api/
 
-En récupérant la localisation de votre appareil, Stay Fresh va pouvoir vous montrer à quel distance vous vous trouvez des fontaines à boire.
+Vous aurez la possibilité de pouvoir trier selon la commune dans laquelle vous trouvez afin de pouvoir vous aider dans votre recherche !
+En récupérant la localisation de votre appareil, Stay Fresh va également pouvoir vous montrer à quel distance vous vous trouvez des fontaines à boire.
 
 ## Les améliorations à venir 
 
